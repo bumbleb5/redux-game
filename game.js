@@ -1,7 +1,8 @@
 const initialWagonState = {
     supplies: 100,
     distance: 0,
-    days: 0
+    days: 0,
+    cash: 200
   };
   
   const wagonReducer = (state = initialWagonState, action) => {
@@ -58,30 +59,30 @@ const initialWagonState = {
     }
   };
   
-  //initializing
-  let wagon = wagonReducer(undefined, {});
-  console.log(wagon);
-  
-  //traveled 1 day
-  wagon = wagonReducer(wagon, {type: 
-  'travel', payload: 1});
-  console.log(wagon);
-  
-  //gathered 1 day
-  wagon = wagonReducer(wagon, {type: 'gather'});
-  console.log(wagon);
-  
-  //oh no, the wagon tipped over!
-  wagon = wagonReducer(wagon, {type: 'tippedWagon'});
-  console.log(wagon);
-  
-  //3 days of travel
-  wagon = wagonReducer(wagon, {type: 'travel', payload: 3});
-  console.log(wagon);
-  
-  //can't travel anymore, insufficient supplies!
-  wagon = wagonReducer(wagon, {type: 'travel', payload: 1});
-  console.log(wagon);
+//initializing
+let wagon = wagonReducer(undefined, {});
+console.log(wagon);
+
+//traveled 1 day
+wagon = wagonReducer(wagon, {type: 
+'travel', payload: 1});
+console.log(wagon);
+
+//gathered 1 day
+wagon = wagonReducer(wagon, {type: 'gather'});
+console.log(wagon);
+
+//oh no, the wagon tipped over!
+wagon = wagonReducer(wagon, {type: 'tippedWagon'});
+console.log(wagon);
+
+//3 days of travel
+wagon = wagonReducer(wagon, {type: 'travel', payload: 3});
+console.log(wagon);
+
+//can't travel anymore, insufficient supplies!
+wagon = wagonReducer(wagon, {type: 'travel', payload: 1});
+console.log(wagon);
 
   //up and going, gathered for a few days
 wagon = wagonReducer(wagon, {type: 'gather'});
